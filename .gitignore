@@ -1,0 +1,7 @@
+# IDE
+\.idea
+\.vscode
+
+# fiels
+.DS_Store
+
