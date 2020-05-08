@@ -1,9 +1,4 @@
 #!/usr/bin/env zsh
-
-# To use commad nvm
-export NVM_DIR=$HOME/.nvm;
-source $NVM_DIR/nvm.sh;
-
 # Cosntats
 URL_NVM_INSTALLER="https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh";
 NVM_BASE_DIR="$HOME/.nvm";
@@ -35,8 +30,7 @@ load-nvmrc';
 
 PROFILES=(zshrc bashrc profile bash_profile);
 
-
-#verifica se existe instalações anteriores
+# Verify if nvm exists
 if [ -d $NVM_BASE_DIR ]; then
   echo "Já exite uma versão anterior do NVM!";
   echo "A nova instalação irar apagar todas instalações anteriores deseja continuar (s/n)?n"
@@ -48,11 +42,9 @@ if [ -d $NVM_BASE_DIR ]; then
     exit;
   fi
 fi
-
 #Message For installer reader
 echo "Qual tipo de instalação gostaria de unsar digite c[curl] ou w[wget]?c"
 read installer
-
 if [ $installer = "c" ]; then
     curl -o- $URL_NVM_INSTALLER | bash;
 elif [ $installer = "w" ]; then
@@ -60,9 +52,7 @@ elif [ $installer = "w" ]; then
 else
     curl -o- $URL_NVM_INSTALLER | bash;
 fi
-
-
-# configurando nvm
+# config nvm
 if [ -d $NVM_BASE_DIR ]; then
   for profile in ${PROFILES[*]}; do
       if [ -f "$HOME/.$profile" ]; then
@@ -71,20 +61,8 @@ if [ -d $NVM_BASE_DIR ]; then
         echo "[$profile] - não encontrado";
       fi
   done
-
-  if ( ! nvm --version); then
-      touch "$HOME/.bash_profile" && echo "$AUTOLOAD_NVMRC" >> $HOME/.bash_profile;
-       echo "[.bash_profile Criadao] - [NVM Configurado]";
-  else
-    echo "NVM - configurando corretamente!"
-  fi
 else
   echo "[FALHA] - diretorio $NVM_BASE_DIR não encontado!"
 fi
-
-# teste final
-if ( nvm --help ); then
-    echo "NVM - instalado com sucesso!" && nvm i node;
-else
-  echo "[ERRO] - NVN não foi instalado corretamente"
-fi
+# Ending
+echo  "[NVM] - Instalado com sucesso! Feche e abra novamente o terminal para utlizar o nvm";

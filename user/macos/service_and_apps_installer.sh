@@ -3,6 +3,7 @@
 ROOT_DIR=$(pwd);
 
 URL_RVMIO_IMPORT="https://rvm.io/mpapis.asc"
+URL_RVMIO_IMPORT2="https://rvm.io/pkuczynski.asc"
 URL_RVMIO="https://get.rvm.io"
 
 REPOSITORY_COMPOSER="copy('https://getcomposer.org/installer', 'composer-setup.php');"
@@ -49,7 +50,8 @@ for app in ${APPS_BREW[*]}; do
 done
 # Verify if gnupg is instaled and Istall rvm
 if ( brew list gnupg ); then
-    curl -sSL $URL_RVMIO_IMPORT | gpg --import - && \curl -L $URL_RVMIO | bash -s stable;
+    curl -sSL $URL_RVMIO_IMPORT | gpg --import - &&
+    curl -sSL $URL_RVMIO_IMPORT2 | gpg --import - && \curl -L $URL_RVMIO | bash -s stable;
     rvm get stable --autolibs=enable && gem update --system;
 else
   echo "[RVM] precisa do gnupg - consulte no (brew list gnupg)";
