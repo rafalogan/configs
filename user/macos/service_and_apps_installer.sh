@@ -30,6 +30,7 @@ APPS_BREW=(
 )
 
 # Execute
+brew update &&
 # Install services
 for service in ${DEV_SERVICES[*]}; do
   if ( ! brew list $service ); then
@@ -62,3 +63,5 @@ if ( ! brew list composer ); then
 else
   echo "[Composer] - já esta instalado!"
 fi
+# Ending
+echo "Instalações completas!"

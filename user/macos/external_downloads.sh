@@ -29,6 +29,6 @@ wget -c $URL_UTORRENT_WEB -P "$APP_DIRECTORY";
 wget -c $URL_FILEZILLA -O "$APP_DIRECTORY/$FILE_FILEZILLA";
 wget -c $URL_MOZILADEV -O "$APP_DIRECTORY/$FILE_MOZILADEV";
 wget -c $URL_ENDPOIT_SECURIRY_VPN -O "$APP_DIRECTORY/$FILE_VPN_CAMARA";
-
+# Ending
 echo "User pré configurado com sucesso \n
 como ultimo passo instale os apps baixados e delete a ($APP_DIRECTORY)" && open $APP_DIRECTORY;
