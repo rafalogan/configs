@@ -46,11 +46,8 @@ FILE_FILEZILLA="FileZilla_3.48.0_macosx-x86.app.tar.bz2"
 FILE_VPN_CAMARA="Endpoint_Security_VPN.dmg"
 
 # Install XCode or Update
-if ( ! xcodebuild -version ); then
-  xcode-select --install;
-else
-  xcodebuild -version && echo "Comand line já instalado, use [Software Update] para instalar atualizações";
-fi
+xcode-select --install;
+
 
 # Install HomeBrew and update
 /usr/bin/ruby -e "$(curl -fsSL $URL_HOMEBREW_INSTALLER)" && brew update;
