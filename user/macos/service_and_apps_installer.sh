@@ -34,7 +34,7 @@ brew update &&
 # Install services
 for service in ${DEV_SERVICES[*]}; do
   if ( ! brew list $service ); then
-    brew isntall $service;
+    brew install $service;
   else
     brew upgrade $service;
   fi
@@ -42,7 +42,7 @@ done
 # Install Apps in Brew
 for app in ${APPS_BREW[*]}; do
   if ( ! brew cask list $app ); then
-      brew cask isntall $app;
+      brew cask install $app;
   else
     brew cask upgrade $app;
   fi
