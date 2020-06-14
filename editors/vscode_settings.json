@@ -1,0 +1,28 @@
+{
+  "workbench.colorTheme": "Material Theme Palenight High Contrast",
+  "workbench.iconTheme": "material-icon-theme",
+  "window.zoomLevel": 0,
+  "editor.fontFamily": "Fira Code, Monaco, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  "terminal.integrated.fontFamily": "monospace",
+  "workbench.colorCustomizations":{
+    "terminal.background": "#000000",
+    "editor.background": "#0C1021",
+    "editor.lineHighlightBackground": "#000000"
+  },
+  "editor.tokenColorCustomizations": {
+    "functions": "#42a5f5",
+    "keywords": "#ba68c8",
+    "strings": {
+      "fontStyle": "italic",
+      "foreground": "#ff0000"
+    },
+    "numbers": "#FF0000",
+    "variables": "#ffffff"
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "git.enableSmartCommit": true
+}
