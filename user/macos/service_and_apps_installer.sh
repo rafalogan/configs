@@ -26,6 +26,8 @@ APPS_BREW=(
   google-chrome
   vlc
   adobe-creative-cloud
+  amazon-music
+  zoomus
 )
 
 # Execute
