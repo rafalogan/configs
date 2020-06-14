@@ -21,7 +21,8 @@ nvm i node
 if (! xcodebuild -version); then
   xcode-select --install
 else
-  xcodebuild -version && echo "Comand line já instalado, use [Software Update] para instalar atualizações"
+  xcodebuild -version &&
+  echo "Comand line já instalado, use [Software Update] para instalar atualizações"
 fi
 
 # Install the xcodeproj ruby gem with the following command.
@@ -29,7 +30,8 @@ sudo gem install xcodeproj
 
 # Install CocoaPods
 # Setup CocoaPods
-sudo gem install cocoapods && Setup CocoaPods
+sudo gem install cocoapods &&
+Setup CocoaPods
 
 # Install pip
 sudo easy_install pip

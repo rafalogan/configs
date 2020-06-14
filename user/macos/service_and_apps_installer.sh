@@ -1,7 +1,5 @@
 #!/usr/bin/env zsh
 # Variables
-ROOT_DIR=$(pwd);
-
 URL_RVMIO_IMPORT="https://rvm.io/mpapis.asc"
 URL_RVMIO_IMPORT2="https://rvm.io/pkuczynski.asc"
 URL_RVMIO="https://get.rvm.io"
