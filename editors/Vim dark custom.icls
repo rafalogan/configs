@@ -1,10 +1,10 @@
 <scheme name="Vim dark" version="142" parent_scheme="Default">
   <option name="FONT_SCALE" value="1.0" />
   <metaInfo>
-    <property name="created">2020-05-12T08:54:48</property>
+    <property name="created">2020-06-22T12:47:56</property>
     <property name="ide">PhpStorm</property>
-    <property name="ideVersion">2020.1.1.0.0</property>
-    <property name="modified">2020-05-12T08:55:10</property>
+    <property name="ideVersion">2020.1.2.0.0</property>
+    <property name="modified">2020-06-22T12:48:13</property>
     <property name="originalScheme">Vim dark</property>
   </metaInfo>
   <option name="LINE_SPACING" value="1.0" />
@@ -527,6 +527,9 @@
         <option name="FOREGROUND" value="75ff" />
       </value>
     </option>
+    <option name="HTML_CODE">
+      <value />
+    </option>
     <option name="HTML_TAG">
       <value>
         <option name="FOREGROUND" value="92a4ff" />
@@ -649,6 +652,12 @@
         <option name="FOREGROUND" value="f7bcff" />
       </value>
     </option>
+    <option name="JS.REGEXP">
+      <value>
+        <option name="FOREGROUND" value="ff4f" />
+        <option name="FONT_TYPE" value="2" />
+      </value>
+    </option>
     <option name="JS.THIS_SUPER">
       <value>
         <option name="FOREGROUND" value="ff0018" />
@@ -767,6 +776,21 @@
     <option name="PHP_VAR">
       <value>
         <option name="FOREGROUND" value="76ff" />
+      </value>
+    </option>
+    <option name="REGEXP.ESC_CHARACTER">
+      <value>
+        <option name="FOREGROUND" value="9fff" />
+      </value>
+    </option>
+    <option name="REGEXP.QUOTE_CHARACTER">
+      <value>
+        <option name="FOREGROUND" value="e1ff" />
+      </value>
+    </option>
+    <option name="REGEXP.REDUNDANT_ESCAPE">
+      <value>
+        <option name="FOREGROUND" value="9fff" />
       </value>
     </option>
     <option name="REST.FIXED" baseAttributes="DEFAULT_IDENTIFIER" />

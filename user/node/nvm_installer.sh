@@ -21,8 +21,11 @@ load-nvmrc() {
     elif [ "$nvmrc_node_version" != "$node_version" ]; then
       nvm use
     fi
+  elif [ "$(nvm version default)" = "N/A" ]; then
+    echo "Intall last node" &&
+    nvm install node
   elif [ "$node_version" != "$(nvm version default)" ]; then
-    echo "Reverting to nvm default version"
+    echo "Reverting to nvm default version" &&
     nvm use default
   fi
 }

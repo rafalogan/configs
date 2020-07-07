@@ -8,7 +8,7 @@ source $NVM_DIR/nvm.sh
 
 # EXEC
 # Install Homebrew to simplify the installation process.
-#ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 # Update brew
 brew update
 
@@ -19,9 +19,11 @@ nvm i node
 # Run the App Store and download Xcode.
 # Start Xcode and you will be prompted to install Command Line Tools for Xcode.
 if (! xcodebuild -version); then
-  xcode-select --install
+  xcode-select --install &&
+  Sudo xcode-select -s /Applications/Xcode.app/Contents/Developer;
 else
   xcodebuild -version &&
+  Sudo xcode-select -s /Applications/Xcode.app/Contents/Developer &&
   echo "Comand line já instalado, use [Software Update] para instalar atualizações"
 fi
 
