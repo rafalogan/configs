@@ -7,7 +7,6 @@ source $NVM_DIR/nvm.sh;
 GULP="gulp-cli"
 TYPESCRIPT="typescript"
 ANGULAR="@angular/cli"
-REACTAPP="create-react-app"
 VUE="@vue/cli"
 NATIVESCIRPT="nativescript"
 
