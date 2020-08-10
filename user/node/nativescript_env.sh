@@ -46,7 +46,7 @@ pip install six
 
 # Install the dependencies for Android development.
 # Set up JDK 8.
-brew tap AdoptOpenJDK/openjdk
+brew tap AdoptOpenJDK/openjdk &&
 brew cask install adoptopenjdk8
 # Set the JAVA_HOME system environment variable.
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
@@ -70,4 +70,5 @@ else
   npm up -g nativescript;
 fi
 # Restart the command prompt.
-echo "[nativescript] - configurado" && tns doctor;
+echo "[nativescript] - configurado" &&
+tns doctor;
