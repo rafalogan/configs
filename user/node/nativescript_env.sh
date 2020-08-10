@@ -20,12 +20,13 @@ else
 fi
 
 # Install Homebrew to simplify the installation process.
-if ( ! brew ); then
+if ( ! brew --version ); then
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" &&
   brew update
 else
   # Update brew
-  brew update
+  brew update &&
+  brew upgrade
 fi
 
 # Install the latest Node.js or update
