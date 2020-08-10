@@ -6,9 +6,11 @@ URL_HOMEBREW_INSTALLER="https://raw.githubusercontent.com/Homebrew/install/maste
 # Install HomeBrew and update
 if (! xcode-select -p ); then
   xcode-select --install &&
+  sudo xcode-select -s /Applications/Xcode.app/Contents/Developer &&
   /usr/bin/ruby -e "$(curl -fsSL $URL_HOMEBREW_INSTALLER)";
 else
-  /usr/bin/ruby -e "$(curl -fsSL $URL_HOMEBREW_INSTALLER)";
+  /usr/bin/ruby -e "$(curl -fsSL $URL_HOMEBREW_INSTALLER)" &&
+  sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
 fi
 # Ending
 echo "Homebrew foi instalado ou atualizado, \n
