@@ -8,9 +8,13 @@ source $NVM_DIR/nvm.sh
 
 # EXEC
 # Install Homebrew to simplify the installation process.
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-# Update brew
-brew update
+if [ ! brew ]; then
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" &&
+  brew update
+else
+  # Update brew
+  brew update
+fi
 
 # Install the latest Node.js or update
 nvm i node
