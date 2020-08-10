@@ -7,18 +7,6 @@ source $NVM_DIR/nvm.sh
 # Variables
 
 # EXEC
-# Install Homebrew to simplify the installation process.
-if [ ! brew ]; then
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" &&
-  brew update
-else
-  # Update brew
-  brew update
-fi
-
-# Install the latest Node.js or update
-nvm i node
-
 # Install the dependencies for iOS development
 # Run the App Store and download Xcode.
 # Start Xcode and you will be prompted to install Command Line Tools for Xcode.
@@ -31,6 +19,18 @@ else
   echo "Comand line já instalado, use [Software Update] para instalar atualizações"
 fi
 
+# Install Homebrew to simplify the installation process.
+if ( ! brew ); then
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" &&
+  brew update
+else
+  # Update brew
+  brew update
+fi
+
+# Install the latest Node.js or update
+nvm i node
+
 # Install the xcodeproj ruby gem with the following command.
 sudo gem install xcodeproj
 
@@ -40,7 +40,7 @@ sudo gem install cocoapods &&
 Setup CocoaPods
 
 # Install pip
-sudo easy_install pip
+sudo easy_install pip &&
 # Install python six package
 pip install six
 
