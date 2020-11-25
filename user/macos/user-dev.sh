@@ -6,7 +6,7 @@ source $NVM_DIR/nvm.sh;
 
 # Constats
 APP_DIRECTORY="$HOME/Downloads/programas"
-URL_NVM_INSTALLER="https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh"
+URL_NVM_INSTALLER="https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.1/install.sh"
 
 URL_HOMEBREW_INSTALLER="https://raw.githubusercontent.com/Homebrew/install/master/install"
 URL_RVMIO_IMPORT="https://rvm.io/mpapis.asc"
@@ -32,6 +32,7 @@ DEV_SERVICES=(
   composer
   wget
   nvm
+  jq
 )
 
 APPS_BREW=(

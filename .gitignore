@@ -1,7 +1,16 @@
-# IDE
+#Idea's
 \.idea
 \.vscode
 
-# fiels
+#Files
 .DS_Store
+.env
 
+#Foldes
+dist
+build
+**/dbase
+
+#Modules
+node_modules
+vendor 
