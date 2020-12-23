@@ -14,6 +14,7 @@ DIRECT_PLUGINS=(
   pm2
   knex
   http-server
+  ipt
 )
 
 # Install or update plugins
@@ -55,4 +56,5 @@ else
   echo "Atualizando - $NATIVESCIRPT" && sudo npm up -g $NATIVESCIRPT;
 fi
 # Ending
+sudo npm up -g &&
 echo "Instalação finalizada com sucesso!"
