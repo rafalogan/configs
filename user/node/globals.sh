@@ -15,6 +15,7 @@ DIRECT_PLUGINS=(
   knex
   http-server
   ipt
+	heroku
 )
 
 # Install or update plugins
