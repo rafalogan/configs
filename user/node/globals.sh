@@ -18,6 +18,9 @@ DIRECT_PLUGINS=(
 	heroku
 )
 
+# update npm
+sudo npm i -g npm;
+
 # Install or update plugins
 for plugin in ${DIRECT_PLUGINS[*]}; do
   if ( ! $plugin --version ); then
