@@ -1,14 +1,16 @@
 #!/usr/bin/env zsh
 # Variables
 # To use commad nvm
-export NVM_DIR=$HOME/.nvm;
-source $NVM_DIR/nvm.sh;
+export NVM_DIR=$HOME/.nvm
+source $NVM_DIR/nvm.sh
 
 GULP="gulp-cli"
 TYPESCRIPT="typescript"
 ANGULAR="@angular/cli"
 VUE="@vue/cli"
 NATIVESCIRPT="nativescript"
+IONIC="@ionic/cli"
+
 
 DIRECT_PLUGINS=(
   pm2
@@ -16,19 +18,9 @@ DIRECT_PLUGINS=(
   http-server
   ipt
 	heroku
+	cordova
+	npm
 )
-
-# update npm
-sudo npm i -g npm;
-
-# Install or update plugins
-for plugin in ${DIRECT_PLUGINS[*]}; do
-  if ( ! $plugin --version ); then
-    echo "Instalando - $plugin" && sudo npm i -g $plugin;
-  else
-    echo "Atualizando - $plugin" && sudo npm up -g $plugin;
-  fi
-done
 # Install or update Gulp
 if ( ! gulp --version ); then
     echo "Instalando - $GULP" && sudo npm i -g $GULP;
@@ -53,12 +45,29 @@ if ( ! vue --version ); then
 else
   echo "Atualizando - $VUE" && sudo npm up -g $VUE;
 fi
+# Install vue
+if ( ! ionic --version ); then
+  echo "Instalando - $IONIC" && sudo npm i -g $IONIC;
+else
+  echo "Atualizando - $IONIC" && sudo npm up -g $IONIC;
+fi
+# Install or update plugins
+for plugin in ${DIRECT_PLUGINS[*]}; do
+  if ( ! $plugin --version ); then
+    echo "Instalando - $plugin" && sudo npm i -g $plugin;
+  else
+    echo "Atualizando - $plugin" && sudo npm up -g $plugin;
+  fi
+done
 #Install Nativescript
 if ( ! tns --version ); then
-  echo "Instalando - $NATIVESCIRPT" && sudo npm i -g $NATIVESCIRPT;
+  echo "Instalando - $NATIVESCIRPT"
+  if ( zsh --version ); then
+      zsh "$HOME/Sites/bin/user/node/nativescript_env.sh";
+  fi
 else
   echo "Atualizando - $NATIVESCIRPT" && sudo npm up -g $NATIVESCIRPT;
 fi
-# Ending
+#ending
 sudo npm up -g &&
 echo "Instalação finalizada com sucesso!"
