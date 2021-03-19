@@ -1,28 +1,46 @@
 {
-  "workbench.colorTheme": "Material Theme Ocean High Contrast",
-  "workbench.iconTheme": "material-icon-theme",
-  "window.zoomLevel": 0,
-  "editor.fontFamily": "Fira Code, Monaco, 'Courier New', monospace",
-  "editor.fontLigatures": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll": true
-  },
-  "terminal.integrated.fontFamily": "monospace",
-  "workbench.colorCustomizations":{
-    "terminal.background": "#000000",
-    "editor.background": "#0C1021",
-    "editor.lineHighlightBackground": "#000000"
-  },
-  "editor.tokenColorCustomizations": {
-    "functions": "#42a5f5",
-    "keywords": "#ba68c8",
-    "strings": {
-      "fontStyle": "italic",
-      "foreground": "#ff0000"
-    },
-    "numbers": "#FF0000",
-    "variables": "#ffffff"
-  },
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "git.enableSmartCommit": true
+	"workbench.colorTheme": "Material Theme Palenight High Contrast",
+	"workbench.iconTheme": "eq-material-theme-icons",
+	"window.zoomLevel": 0,
+	"editor.fontFamily": "Fira Code, Monaco, 'Courier New', monospace",
+	"editor.fontLigatures": true,
+	"editor.codeActionsOnSave": {
+		"source.fixAll": true
+	},
+	"terminal.integrated.fontFamily": "Fira Code",
+	"workbench.colorCustomizations":{
+
+		"terminal.background": "#000000",
+		"editor.background": "#0C1021",
+		"editor.lineHighlightBackground": "#000000"
+	},
+	"editor.tokenColorCustomizations": {
+		"functions": "#42a5f5",
+		"keywords": "#ba68c8",
+		"strings": {
+			"fontStyle": "italic",
+			"foreground": "#ff0000"
+		},
+		"numbers": "#FF0000",
+		"variables": "#ffffff",
+		"types": "#99035b"
+	},
+	"javascript.updateImportsOnFileMove.enabled": "always",
+	"git.enableSmartCommit": true,
+	"todo-tree.tree.showScanModeButton": false,
+	"editor.suggestSelection": "first",
+	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+	"cSpell.enabled": true,
+	"cSpell.language": "en,pt,pt_BR",
+	"sync.gist": "e08ad8bb04b3db0c79869ce98c3d633c",
+	"sync.quietSync": true,
+	"sync.autoDownload": true,
+	"sync.autoUpload": true,
+	"cSpell.userWords": [
+		"Controller",
+		"signin",
+		"signup"
+	],
+	"tabnine.experimentalAutoImports": true
 }
+

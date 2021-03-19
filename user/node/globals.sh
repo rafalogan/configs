@@ -3,15 +3,14 @@
 # To use commad nvm
 export NVM_DIR=$HOME/.nvm
 source $NVM_DIR/nvm.sh
-
+# indirect plugins
 GULP="gulp-cli"
 TYPESCRIPT="typescript"
 ANGULAR="@angular/cli"
 VUE="@vue/cli"
 NATIVESCIRPT="nativescript"
 IONIC="@ionic/cli"
-
-
+# Direct Plugins npm
 DIRECT_PLUGINS=(
   pm2
   knex
@@ -19,8 +18,11 @@ DIRECT_PLUGINS=(
   ipt
 	heroku
 	cordova
-	npm
 )
+# Constants
+NATIVESCIRPT_ENV="${0%/*}/nativescript_env.sh"
+# Update nmp and npx
+npm i - g npm npx
 # Install or update Gulp
 if ( ! gulp --version ); then
     echo "Instalando - $GULP" && sudo npm i -g $GULP;
@@ -63,7 +65,7 @@ done
 if ( ! tns --version ); then
   echo "Instalando - $NATIVESCIRPT"
   if ( zsh --version ); then
-      zsh "$HOME/Sites/bin/user/node/nativescript_env.sh";
+      zsh "$NATIVESCIRPT_ENV";
   fi
 else
   echo "Atualizando - $NATIVESCIRPT" && sudo npm up -g $NATIVESCIRPT;

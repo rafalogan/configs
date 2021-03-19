@@ -1,11 +1,11 @@
-<scheme name="Vim dark" version="142" parent_scheme="Default">
+<scheme name="Vim dark copy" version="142" parent_scheme="Default">
   <option name="FONT_SCALE" value="1.0" />
   <metaInfo>
-    <property name="created">2020-06-22T12:47:56</property>
+    <property name="created">2021-03-19T17:17:09</property>
     <property name="ide">PhpStorm</property>
-    <property name="ideVersion">2020.1.2.0.0</property>
-    <property name="modified">2020-06-22T12:48:13</property>
-    <property name="originalScheme">Vim dark</property>
+    <property name="ideVersion">2020.3.3.0.0</property>
+    <property name="modified">2021-03-19T17:17:52</property>
+    <property name="originalScheme">Vim dark copy</property>
   </metaInfo>
   <option name="LINE_SPACING" value="1.0" />
   <option name="EDITOR_FONT_SIZE" value="12" />
@@ -203,7 +203,6 @@
       <value>
         <option name="FOREGROUND" value="327bff" />
         <option name="EFFECT_COLOR" value="ff" />
-        <option name="EFFECT_TYPE" value="1" />
       </value>
     </option>
     <option name="CUSTOM_INVALID_STRING_ESCAPE_ATTRIBUTES">
@@ -765,6 +764,11 @@
     <option name="PHP.USE_NAMESPACE">
       <value>
         <option name="FOREGROUND" value="3ac440" />
+      </value>
+    </option>
+    <option name="PHP_PARAMETER">
+      <value>
+        <option name="FOREGROUND" value="ffea" />
       </value>
     </option>
     <option name="PHP_TAG">

@@ -25,8 +25,7 @@ if ( ! brew --version ); then
   brew update
 else
   # Update brew
-  brew update &&
-  brew upgrade
+  brew update && brew upgrade && brew upgrade --casks --greedy;
 fi
 
 # Install the latest Node.js or update
