@@ -1,4 +1,8 @@
-# This Autoload nvmrc
+# NVM configs Start ##
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+## This Autoload nvmrc start ##
 autoload -U add-zsh-hook
 load-nvmrc() {
 	local node_version="$(nvm version)"
@@ -22,4 +26,5 @@ load-nvmrc() {
 }
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
-# This Autoload nvmrc
+# This Autoload nvmrc End ##
+# NVM configs End ##

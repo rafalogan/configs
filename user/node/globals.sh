@@ -1,8 +1,8 @@
 #!/usr/bin/env zsh
 # Variables
 # To use commad nvm
-export NVM_DIR=$HOME/.nvm
-source $NVM_DIR/nvm.sh
+export NVM_DIR="$HOME/.nvm"
+source "$NVM_DIR/nvm.sh"
 # indirect plugins
 GULP="gulp-cli"
 TYPESCRIPT="typescript"

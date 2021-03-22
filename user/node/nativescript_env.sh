@@ -1,9 +1,8 @@
 #!/usr/bin/env zsh
 
 # Requires
-export NVM_DIR=$HOME/.nvm
-source $NVM_DIR/nvm.sh
-
+export NVM_DIR="$HOME/.nvm"
+source "$NVM_DIR/nvm.sh"
 # Variables
 
 # EXEC
@@ -11,49 +10,62 @@ source $NVM_DIR/nvm.sh
 # Run the App Store and download Xcode.
 # Start Xcode and you will be prompted to install Command Line Tools for Xcode.
 if (! xcodebuild -version); then
-  xcode-select --install &&
-  Sudo xcode-select -s /Applications/Xcode.app/Contents/Developer;
+	xcode-select --install &&
+		Sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+elif (! xcode-select --install); then
+	Sudo xcode-select -s /Applications/Xcode.app/Contents/Developer &&
+		xcodebuild -version
 else
-  xcodebuild -version &&
-  Sudo xcode-select -s /Applications/Xcode.app/Contents/Developer &&
-  echo "Comand line já instalado, use [Software Update] para instalar atualizações"
+	xcodebuild -version &&
+		Sudo xcode-select -s /Applications/Xcode.app/Contents/Developer &&
+		echo "Comand line já instalado, use [Software Update] para instalar atualizações"
 fi
 
 # Install Homebrew to simplify the installation process.
-if ( ! brew --version ); then
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" &&
-  brew update
+if (! brew --version); then
+	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" &&
+		brew update
 else
-  # Update brew
-  brew update && brew upgrade && brew upgrade --casks --greedy;
+	# Update brew
+	brew update && brew upgrade && brew upgrade --casks
 fi
 
 # Install the latest Node.js or update
-nvm i node
-
+if (! node --version); then
+	nvm install node
+fi
 # Install the xcodeproj ruby gem with the following command.
 sudo gem install xcodeproj
 
 # Install CocoaPods
 # Setup CocoaPods
 sudo gem install cocoapods &&
-Setup CocoaPods
+	Setup CocoaPods
 
 # Install pip
 sudo easy_install pip &&
-# Install python six package
-pip install six
+	# Install python six package
+	pip install six
 
 # Install the dependencies for Android development.
 # Set up JDK 8.
-brew tap AdoptOpenJDK/openjdk &&
-brew cask install adoptopenjdk8
+if (! brew list --casks homebrew/cask-versions/adoptopenjdk8); then
+	brew tap AdoptOpenJDK/openjdk &&
+		brew install --cask homebrew/cask-versions/adoptopenjdk8
+else
+	brew tap AdoptOpenJDK/openjdk &&
+		brew reinstall --cask homebrew/cask-versions/adoptopenjdk8
+fi
 # Set the JAVA_HOME system environment variable.
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 
 # Install the Android SDK.
 # In the terminal, run the following command:
-brew cask install android-sdk
+if (! brew list --casks android-sdk); then
+	brew install --cask android-sdk
+else
+	brew reinstall --cask android-sdk
+fi
 # Next, run the following command to set the ANDROID_HOME system environment variable:
 export ANDROID_HOME=/usr/local/share/android-sdk
 # In addition, install all packages for the Android SDK Platform 28, Android SDK Build-Tools 28.0.3 or later,
@@ -64,11 +76,11 @@ $ANDROID_HOME/tools/bin/sdkmanager "tools" "emulator" "platform-tools" "platform
 # Setup Android Emulators (AVD) by following the article
 # 'https://docs.nativescript.org/angular/tooling/android-virtual-devices'
 # Install the NativeScript CLI.
-if ( ! tns --version ); then
-  npm i -g nativescript;
+if (! tns --version); then
+	npm i -g nativescript
 else
-  npm up -g nativescript;
+	npm up -g nativescript
 fi
 # Restart the command prompt.
 echo "[nativescript] - configurado" &&
-tns doctor;
+	tns doctor
